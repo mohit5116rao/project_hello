@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Tweet List
+{% endblock %}
+
+{% block content %}
+{% for object in object_list %}
+
+    <p>{{ object.tweets }}</p>
+    <a href="{% url 'tweets:detail' object.pk %}">detail</a>
+    <a href="{% url 'tweets:update' object.pk %}">update</a>
+    <a href="{% url 'tweets:delete' object.pk %}">delete</a>
+
+    {% endfor %}
+{% endblock %}

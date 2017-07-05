@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    {% for object in object_list %}
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <h4>{{ object.title }}</h4>
+                <p>{{ object.content }}</p>
+                <a href="{%  url 'blogs:detail' object.pk %}">Details</a>
+                
+                <a href="{%  url 'blogs:delete' object.pk %}">Delete</a>
+                <hr>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
